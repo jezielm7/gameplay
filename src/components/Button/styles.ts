@@ -33,5 +33,5 @@ export const Label = styled.Text`
   font-size: 15px;
   text-align: center;
   color: ${theme.colors.heading};
-  font-family: ${theme.fonts.text500};
+  font-family: ${theme.fonts.inter500};
 `;

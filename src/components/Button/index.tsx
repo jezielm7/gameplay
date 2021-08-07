@@ -12,11 +12,12 @@ import {
 
 interface ButtonProps extends RectButtonProps {
   label: string;
+  onPress?: () => void;
 }
 
-function Button({ label }: ButtonProps) {
+function Button({ label, onPress }: ButtonProps) {
   return (
-    <Container>
+    <Container onPress={onPress}>
       <IconWrapper>
         <Icon source={discordImg} />
       </IconWrapper>
