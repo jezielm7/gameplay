@@ -6,7 +6,6 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: ${theme.colors.secondary90};
 `;
 
 export const Image = styled.Image`
@@ -21,10 +20,11 @@ export const Content = styled.View`
 
 export const Title = styled.Text`
   font-size: 40px;
+  line-height: 40px;
   text-align: center;
   margin-bottom: 16px;
   color: ${theme.colors.heading};
-  font-family: ${theme.fonts.title700};
+  font-family: ${theme.fonts.rajdhani700};
 `;
 
 export const SubTitle = styled.Text`
@@ -34,5 +34,5 @@ export const SubTitle = styled.Text`
   margin-bottom: 64px;
 
   color: ${theme.colors.heading};
-  font-family: ${theme.fonts.title500};
+  font-family: ${theme.fonts.rajdhani500};
 `;
