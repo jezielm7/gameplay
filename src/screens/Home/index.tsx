@@ -1,13 +1,22 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { LogBox } from 'react-native';
 
-import { Container } from './styles';
+import Background from '../../components/Background';
+import Profile from '../../components/Profile';
+
+import { Container, Header } from './styles';
 
 function Home() {
+  LogBox.ignoreLogs(['Expected style']);
+
   return (
-    <Container>
-      <Text>Home Screen</Text>
-    </Container>
+    <Background>
+      <Container>
+        <Header>
+          <Profile />
+        </Header>
+      </Container>
+    </Background>
   );
 };
 
