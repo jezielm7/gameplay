@@ -12,6 +12,6 @@ export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
 
-  margin-top: ${getStatusBarHeight() + 26};
   margin-bottom: 42px;
+  margin-top: ${getStatusBarHeight() + 26};
 `;
