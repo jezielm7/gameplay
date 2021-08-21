@@ -12,7 +12,7 @@ import {
 
 interface ButtonProps extends RectButtonProps {
   label: string;
-  onPress?: () => void;
+  onPress: () => void;
 }
 
 function Button({ label, onPress }: ButtonProps) {
