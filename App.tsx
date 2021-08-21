@@ -4,12 +4,12 @@ import { StatusBar } from 'react-native';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
-import { NavigationContainer } from '@react-navigation/native';
-
 import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani';
 
-import StackRouter from './src/routes/stack.routes';
+import Routes from './src/routes';
+
+import Background from './src/components/Background';
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -24,14 +24,14 @@ const App = () => {
   }
 
   return (
-    <NavigationContainer>
+    <Background>
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
-      <StackRouter />
-    </NavigationContainer>
+      <Routes />
+    </Background>
   );
 }
 

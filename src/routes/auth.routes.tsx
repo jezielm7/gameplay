@@ -6,11 +6,11 @@ import Home from '../screens/Home';
 
 const { Navigator, Screen } = createStackNavigator();
 
-const StackRouter = () => {
+const AuthRouter = () => {
   return (
     <Navigator
       initialRouteName="SignIn"
-      screenOptions={{ headerShown: false }}
+      headerMode="none"
     >
       <Screen name="SignIn" component={SignIn} />
       <Screen name="Home" component={Home} />
@@ -18,4 +18,4 @@ const StackRouter = () => {
   );
 }
 
-export default StackRouter;
+export default AuthRouter;
