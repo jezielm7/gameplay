@@ -3,10 +3,6 @@ import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { theme } from '../../global/styles/theme';
 
-interface StyledCategoryProps {
-  checked?: boolean;
-}
-
 export const Container = styled(LinearGradient)`
   width: 104px;
   height: 120px;
@@ -17,35 +13,37 @@ export const Container = styled(LinearGradient)`
   border-radius: 8px;
 `;
 
-export const Content = styled.View<StyledCategoryProps>`
+export const Content = styled(LinearGradient)`
   width: 100px;
   height: 116px;
-  padding: 8px 0;
+  padding: 20px 0;
   border-radius: 8px;
 
   align-items: center;
   justify-content: space-between;
-
-  background-color: ${theme.colors.secondary40};
 `;
 
 export const CheckedBox = styled.View`
+  top: 8px;
+  right: 8px;
+  
   width: 12px;
   height: 12px;
-  margin-right: 8px;
-  align-self: flex-end;
-  
   border-radius: 3px;
+  
+  position: absolute;
   background-color: ${theme.colors.primary};
 `;
 
 export const UncheckedBox = styled.View`
+  top: 8px;
+  right: 8px;
+
   width: 12px;
   height: 12px;
-  margin-right: 8px;
-  align-self: flex-end;
-  
   border-radius: 3px;
+  position: absolute;
+  
   border: 1px solid ${theme.colors.secondary50};
   background-color: ${theme.colors.secondary100};
 `;
@@ -53,5 +51,5 @@ export const UncheckedBox = styled.View`
 export const Title = styled.Text`
   font-size: 15px;
   color: ${theme.colors.heading};
-  font-family: ${theme.fonts.rajdhani500};
+  font-family: ${theme.fonts.rajdhani700};
 `;
