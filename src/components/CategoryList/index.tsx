@@ -7,11 +7,16 @@ import { categories } from '../../utils/categories';
 import { Container } from './styles';
 
 interface Props {
+  hasCheckBox?: boolean;
   categorySelected: string;
   setCategory: (categoryId: string) => void;
 }
 
-function CategoryList({ categorySelected, setCategory }: Props) {
+function CategoryList({
+  categorySelected,
+  setCategory,
+  hasCheckBox = false,
+}: Props) {
   return (
     <Container
       horizontal
@@ -25,6 +30,7 @@ function CategoryList({ categorySelected, setCategory }: Props) {
           icon={category.icon}
           checked={category.id === categorySelected}
           onPress={() => setCategory(category.id)}
+          hasCheckBox={hasCheckBox}
         />
       ))}
     </Container>
