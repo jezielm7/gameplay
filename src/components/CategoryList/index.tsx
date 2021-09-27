@@ -7,8 +7,8 @@ import { categories } from '../../utils/categories';
 import { Container } from './styles';
 
 interface Props {
-  categorySelected: number;
-  setCategory: (categoryId: number) => void;
+  categorySelected: string;
+  setCategory: (categoryId: string) => void;
 }
 
 function CategoryList({ categorySelected, setCategory }: Props) {
