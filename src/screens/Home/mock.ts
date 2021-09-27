@@ -3,7 +3,7 @@ export default [
     id: '1',
     guild: {
       id: '1',
-      name: 'Legends',
+      name: 'COD Warzone',
       icon: null,
       owner: true,
     },
@@ -16,7 +16,7 @@ export default [
     id: '2',
     guild: {
       id: '1',
-      name: 'Legends',
+      name: 'COD Mobile',
       icon: null,
       owner: true,
     },
