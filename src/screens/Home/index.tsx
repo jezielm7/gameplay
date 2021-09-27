@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { LogBox, Text } from 'react-native';
+import { LogBox } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Background from '../../components/Background';
 import Profile from '../../components/Profile';
@@ -21,10 +22,16 @@ import {
 function Home() {
   LogBox.ignoreLogs(['Expected style']);
 
+  const { navigate } = useNavigation();
+
   const [category, setCategory] = useState('');
 
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId);
+  }
+
+  function AppointmentDetailsNavigate() {
+    navigate('Details');
   }
 
   return (
@@ -47,7 +54,10 @@ function Home() {
             data={Appointments}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
-              <Appointment data={item} />
+              <Appointment
+                data={item}
+                onPress={AppointmentDetailsNavigate}
+              />
             )}
             showsVerticalScrollIndicator={false}
             ItemSeparatorComponent={ListDivider}
