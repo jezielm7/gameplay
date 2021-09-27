@@ -16,4 +16,9 @@ export const Header = styled.View`
   margin-top: ${getStatusBarHeight() + 26};
 `;
 
-export const Category = styled.View``;
+export const Content = styled.View``;
+
+export const Matches = styled.FlatList`
+  margin-top: 24px;
+  margin-left: 24px;
+`;

@@ -1,21 +1,32 @@
 import React, { useState } from 'react';
-import { LogBox } from 'react-native';
+import { LogBox, Text } from 'react-native';
 
 import Background from '../../components/Background';
+import Profile from '../../components/Profile';
 import ButtonAdd from '../../components/ButtonAdd';
 import CategoryList from '../../components/CategoryList';
-import Profile from '../../components/Profile';
+import ListHeader from '../../components/ListHeader';
+import Appointment from '../../components/Appointment';
+import ListDivider from '../../components/ListDivider';
 
-import { Container, Header, Category } from './styles';
+import Appointments from './mock';
+
+import {
+  Container,
+  Header,
+  Content,
+  Matches,
+} from './styles';
 
 function Home() {
   LogBox.ignoreLogs(['Expected style']);
 
-  const [category, setCategory] = useState(0);
+  const [category, setCategory] = useState('');
 
-  function handleCategorySelect(categoryId: number) {
-    categoryId === category ? setCategory(0) : setCategory(categoryId);
+  function handleCategorySelect(categoryId: string) {
+    categoryId === category ? setCategory('') : setCategory(categoryId);
   }
+
   return (
     <Background>
       <Container>
@@ -24,12 +35,24 @@ function Home() {
           <ButtonAdd />
         </Header>
 
-        <Category>
-          <CategoryList
-            categorySelected={category}
-            setCategory={handleCategorySelect}
+        <CategoryList
+          categorySelected={category}
+          setCategory={handleCategorySelect}
+        />
+
+        <Content>
+          <ListHeader title="Partidas Agendadas" subtitle="Total 6" />
+
+          <Matches
+            data={Appointments}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => (
+              <Appointment data={item} />
+            )}
+            showsVerticalScrollIndicator={false}
+            ItemSeparatorComponent={ListDivider}
           />
-        </Category>
+        </Content>
       </Container>
     </Background>
   );
